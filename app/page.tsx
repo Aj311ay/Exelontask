@@ -1,101 +1,143 @@
-import Image from "next/image";
+import Image from 'next/image';
+import { AiOutlineRight } from 'react-icons/ai'; // Importing an arrow icon from react-icons
 
-export default function Home() {
+export default function Page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="bg-green-100 min-h-screen">
+      {/* Header Section */}
+      <header className="flex justify-between items-center px-6 py-4 bg-green-100">
+        <h1 className="text-2xl font-bold">🐾 SMALLS</h1>
+        <nav className="flex space-x-6">
+          <a href="#" className="hover:underline">Fav (2)</a>
+          <a href="#" className="hover:underline">Cart (1)</a>
+          <a href="/login" className="hover:underline">Login</a>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+      {/* Hero Section */}
+      <main className="p-0">
+        <section className="bg-green-100 text-center">
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            Voted #1 Healthiest Cat Food 🐱🥩
+          </h2>
+          <p className="text-gray-600 mb-6">100% Healthy and Quality Full</p>
+
+          {/* Image Section */}
+          <div className="flex justify-center space-x-4 relative">
+            {/* Links Section on the left of the yellow image */}
+            <div className="absolute top-[50%] left-0 transform -translate-y-1/2 flex flex-col space-y-2 items-start ml-[20px]">
+            <a href="#" className="flex items-center space-x-2 text-gray-700 hover:underline">
+                <span>Why Smalls?</span>
+                <AiOutlineRight className="text-sm" />
+              </a>
+              <a href="#" className="flex items-center space-x-2 text-gray-800 hover:underline">
+                <span>Behind Our Food</span>
+                <AiOutlineRight className="text-sm" />
+              </a>
+              <a href="#" className="flex items-center space-x-2 text-gray-800 hover:underline">
+                <span>Small Reviews</span>
+                <AiOutlineRight className="text-sm" />
+              </a>
+              <a href="/faq" className="flex items-center space-x-2 text-gray-800 hover:underline">
+                <span>FAQs</span>
+                <AiOutlineRight className="text-sm" />
+              </a>
+              <a href="#" className="flex items-center space-x-2 text-gray-800 hover:underline">
+                <span>Stores</span>
+                <AiOutlineRight className="text-sm" />
+              </a>
+            </div>
+
+            {/* Yellow Image */}
+            <div>
+              <Image
+                src="/yellow.png" // Replace with your image path
+                alt="Yellow Food Bag"
+                width={200}
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+            <div className="absolute bottom-[-40px] left-[40%] transform translate-x-[-50%] flex items-center space-x-2 text-gray-700 hover:underline">
+    <a href="#" className="flex items-center space-x-2">
+      <span>View All</span>
+      <AiOutlineRight className="text-sm" />
+    </a>
+  </div>
+
+            {/* Orange Image */}
+            <div className="relative top-[60px]">
+              <Image
+                src="/orange.png" // Replace with your image path
+                alt="Orange Food Bag"
+                width={200}
+                height={300}
+                className="rounded-lg"
+              />
+            </div>
+            <div className="flex flex-col items-start ml-15 mt-8"> {/* Added margin-left and margin-top */}
+    {/* Tick Mark Image */}
+    <div className="mb-2">
+      <Image
+        src="/tick.png" // Replace with your tick mark image path
+        alt="Tick Mark"
+        width={24} // Adjust size as needed
+        height={24} // Adjust size as needed
+      />
+    </div>
+
+    {/* Text */}
+    <p className="text-gray-800 text-lg">
+      Experience a peace of<br /> Mind with Our Customer<br /> Protection Service
+    </p>
+  </div>
+</div>
+  
+
+          <div className="absolute top-[60%] left-0 transform -translate-y-1/2 flex flex-col space-y-2 items-start ml-[70px]">
+          <button className="bg-black text-white py-2 px-6 rounded-full text-sm flex items-center justify-center hover:bg-gray-800">
+    Watch Video
+  </button>
+          </div>
+        </section>
+        
+
+        {/* Statistics Section */}
+        <section className="mt-12 bg-white p-6 rounded-lg shadow-md text-center">
+  <h3 className="text-2xl text-gray-800 mb-4 inline-flex items-center justify-center">
+    88% OF CUSTOMERS 🐾 REPORT HEALTH IMPROVEMENTS AFTER SWITCHING
+    {/* Cat Image between the words */}
+    <div className="mx-2">
+      <Image
+        src="/cat.png" // Replace with your cat image path
+        alt="Cat"
+        width={70} // Adjust the size as needed
+        height={70} // Adjust the size as needed
+        className="rounded-full"
+      />
+    </div>
+    TO SMALLS
+  </h3>
+</section>
+
+<section className="bg-white p-6 rounded-lg shadow-md mt-4">
+  <p className="text-gray-600 font-bold text-center">
+    Other brands pack their products with carbohydrates, preservatives, and harmful
+    artificial ingredients.
+  </p>
+  
+  {/* Image below the text, centered */}
+  <div className="mt-4 flex justify-center items-center">
+    <Image
+      src="/all.png" // Replace with your image path
+      alt="All Image"
+      width={400} // Adjust the size as needed
+      height={400} // Adjust the size as needed
+    />
+  </div>
+</section>
+
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
